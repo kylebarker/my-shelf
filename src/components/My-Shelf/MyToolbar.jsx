@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form'
-import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { Container } from 'reactstrap';
 
@@ -27,9 +26,9 @@ class MyToolbar extends Component {
             <label>Sort By</label>
             <div>
               <Field name="sortMyRecords" component="select">
-                <option value="ff0000">Artist</option>
-                <option value="00ff00">Album</option>
-                <option value="0000ff">Year</option>
+                <option value="artist">Artist</option>
+                <option value="album">Album</option>
+                <option value="year">Year</option>
               </Field>
             </div>
           </div>

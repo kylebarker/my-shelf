@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Row, Col } from 'reactstrap';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 
 class AddRecord extends Component {
   render () {

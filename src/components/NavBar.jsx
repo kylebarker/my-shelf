@@ -1,13 +1,5 @@
 import React, { Component } from 'react';
 import { Navbar, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
-import {
-  BrowserRouter as Router,
-  Route,
-  Link
-} from 'react-router-dom';
-import MyToolbar from './My-Shelf/MyToolbar'
-import AddMain from './Add-Record/AddMain'
-
 
 class NavBar extends Component {
 
@@ -24,13 +16,13 @@ class NavBar extends Component {
                 <NavLink href="/">Wishlist</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/">+Record</NavLink>
+                <NavLink href="/addRecord">+Record</NavLink>
               </NavItem>
             </Nav>
         </Navbar>
 
 
-      
+
       </div>
     )
   }
