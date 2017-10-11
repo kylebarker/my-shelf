@@ -10,7 +10,7 @@ class MyShelfMain extends Component {
     return (
       <Container>
         <MyToolbar />
-        
+        <MyRecordList />
       </Container>
     )
   }

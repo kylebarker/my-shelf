@@ -5,17 +5,19 @@ import AddRecord from './AddRecord'
 
 class AddList extends Component {
   render () {
-    console.log("AddList Props", this.props.artists[0])
-
-    // let searchedAlbums = this.props.artists[0].results.map((album, i) => <AddRecord key={i} albums={album}/>)
-
-
-    return (
-      <div>
-        <Row>
-        </Row>
-      </div>
-    )
+    if(this.props.artists[0]){
+      let searchedAlbums = this.props.artists[0].results.map((album, i) => <AddRecord key={i} albums={album}/>)
+      console.log("SUPERSUPER", this.props.artists[0].results[0])
+      return (
+        <div>
+          <Row>
+            {searchedAlbums}
+          </Row>
+        </div>
+      )
+    } else {
+      return null
+    }
   }
 }
 

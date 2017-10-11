@@ -13,3 +13,9 @@ export const getArtist = (artist) => {
      })
   }
 }
+export const getMyAlbums = () => {
+  return {
+    type: 'GET_MY_ALBUMS',
+    payload: axios.get(`http://localhost:8000/myShelf`)
+  }
+}

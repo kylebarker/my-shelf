@@ -4,18 +4,30 @@ import { connect } from 'react-redux';
 
 class AddRecord extends Component {
   render () {
-    console.log("Add Record Props",this.props)
+    console.log("Add Record Props",this.props.albums)
+    var genre = this.props.albums.genre[0];
+    var albumid = this.props.albums.id.toString();
+    var label = this.props.albums.label[0];
+    var albumArt = this.props.albums.thumb;
+    var year = this.props.albums.year;
+    var title = this.props.albums.title;
+    var artistAlbumArray = title.split(" - ");
+    var artistName = artistAlbumArray[0];
+    var albumName = artistAlbumArray[1]
+
+
+
     return (
       <Col md="6">
         <Row>
           <Col md="4">
-            <img src="http://imgfill.com/125x125" alt="Placeholder"/>
+            <img src={albumArt} alt={albumName}/>
           </Col>
           <Col md="4">
             <br />
-            <Row>Artist Name</Row>
+            <Row>{artistName}</Row>
             <br/>
-            <Row>Album Name</Row>
+            <Row>{albumName}</Row>
           </Col>
           <Col md="4">
             <Row>
