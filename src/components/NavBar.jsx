@@ -10,10 +10,10 @@ class NavBar extends Component {
           <NavbarBrand href="/">My Shelf</NavbarBrand>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink href="/">Random</NavLink>
+                <NavLink href="/">My Shelf</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/">Wishlist</NavLink>
+                <NavLink href="/:id">Random</NavLink>
               </NavItem>
               <NavItem>
                 <NavLink href="/addRecord">+Record</NavLink>

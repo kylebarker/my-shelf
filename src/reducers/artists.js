@@ -3,8 +3,10 @@ export default(state = [], action) => {
     case 'GET_ARTIST_FULFILLED':
       console.log('action payload', action.payload);
       return [...state, action.payload.data]
-    case 'GET_MY_ALBUMS':
+    case 'GET_MY_ALBUMS_FULFILLED':
       return [...state, action.payload.data]
+    case 'ADD_TO_MY_SHELF_FULFILLED':
+      return [...state, ...action.payload.data]
     default:
       return state;
   }

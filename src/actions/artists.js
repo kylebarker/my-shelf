@@ -19,3 +19,10 @@ export const getMyAlbums = () => {
     payload: axios.get(`http://localhost:8000/myShelf`)
   }
 }
+
+export const addToMyShelf = (album) => {
+  return {
+    type: 'ADD_TO_MY_SHELF',
+    payload: axios.post(`http://localhost:8000/myShelf`, album)
+  }
+}

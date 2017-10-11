@@ -27,7 +27,7 @@ class AddToolbar extends Component {
                   type="text"
                   placeholder="Search by Artist"
                 />
-              <button type="submit">Submit</button>
+              <button type="submit" className="searchSubmit">Submit</button>
               </div>
             </Col>
           </FormGroup>

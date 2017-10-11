@@ -9,6 +9,7 @@ import {
 import NavBar from './components/NavBar'
 import AddMain from './components/Add-Record/AddMain'
 import MyShelfMain from './components/My-Shelf/MyShelfMain'
+import MyRecordMain from './components/My-Record/MyRecordMain'
 
 export class App extends Component {
   render() {
@@ -18,9 +19,9 @@ export class App extends Component {
 
         <Router>
           <div>
-
             <Route exact path="/" component={MyShelfMain}/>
             <Route path="/addRecord" component={AddMain}/>
+            {/* <Route path="/:id" component={MyRecordMain}/> */}
           </div>
         </Router>
       </div>
