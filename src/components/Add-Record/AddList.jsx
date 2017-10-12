@@ -6,9 +6,9 @@ import AddRecord from './AddRecord'
 class AddList extends Component {
 
   render () {
-    if(this.props.artists[this.props.artists.length-1]){
-      console.log('addlist props', this.props.artists[this.props.artists.length-1]);
-      let {results} = this.props.artists[this.props.artists.length-1]
+    if(this.props.artists[0]){
+      let results = this.props.artists
+      console.log('results', results)
       if(results){
         let searchedAlbums = results.map((album, i) => <AddRecord key={i} albums={album}/>)
         return (

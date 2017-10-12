@@ -6,8 +6,8 @@ import { addToMyShelf } from '../../actions/artists'
 
 class AddRecord extends Component {
   render () {
-    console.log("Add Record Props",this.props.albums)
-  
+    console.log("Add Record Props",this.props)
+
     let albumArt = this.props.albums.thumb;
     let title = this.props.albums.title;
     let artistAlbumArray = title.split(" - ");
