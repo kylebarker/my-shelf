@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
 import { Navbar, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom'
 
 class NavBar extends Component {
 
@@ -10,13 +15,13 @@ class NavBar extends Component {
           <NavbarBrand href="/">My Shelf</NavbarBrand>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink href="/">My Shelf</NavLink>
+                <Link to="/" className="moveLeft">My Shelf</Link>
               </NavItem>
               <NavItem>
-                <NavLink href="/:id">Random</NavLink>
+                <Link to="/album/:id" className="moveLeft">Random</Link>
               </NavItem>
               <NavItem>
-                <NavLink href="/addRecord">+Record</NavLink>
+                <Link to="/addRecord" className="moveLeft">+Record</Link>
               </NavItem>
             </Nav>
         </Navbar>

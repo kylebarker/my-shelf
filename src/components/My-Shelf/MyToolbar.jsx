@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form'
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import { Container } from 'reactstrap';
-
+import { sortAlbumsBy } from '../../actions/sort'
 
 class MyToolbar extends Component {
 
@@ -25,7 +26,12 @@ class MyToolbar extends Component {
           <div>
             <label>Sort By</label>
             <div>
-              <Field name="sortMyRecords" component="select">
+              <Field
+                name="sortMyRecords"
+                component="select"
+                defaultValue='artist'
+                onChange={(e) => this.props.sortAlbumsBy(e.target.value)}
+              >
                 <option value="artist">Artist</option>
                 <option value="album">Album</option>
                 <option value="year">Year</option>
@@ -39,9 +45,15 @@ class MyToolbar extends Component {
   }
 }
 
+function mapDispatchToProps(dispatch) {
+  return {
+    sortAlbumsBy: bindActionCreators(sortAlbumsBy, dispatch)
+  }
+}
+
 MyToolbar = reduxForm({
   // a unique name for the form
   form: 'myToolbar'
 })(MyToolbar)
 
-export default connect(null, null)(MyToolbar);
+export default connect(null, mapDispatchToProps)(MyToolbar);

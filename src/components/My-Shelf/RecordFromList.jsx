@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
-import { Button, Row, Col } from 'reactstrap';
+import { Row, Col } from 'reactstrap';
 import { connect } from 'react-redux';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom';
 import { NavLink } from 'reactstrap';
 
 
@@ -11,16 +16,16 @@ class RecordFromList extends Component {
     let albumArt = this.props.album.image_url;
     let artistName = this.props.album.artist;
     let albumName = this.props.album.album;
-    let albumid = "/" + this.props.album.id;
+    let albumid = "/album/" + this.props.album.id;
 
     return (
       <Col md="2">
         <br/>
           <Row>
             <Col md="12">
-              <NavLink href={albumid}>
+              <Link to={albumid}>
                 <img src={albumArt} alt="placeholder" className="myAlbumArt"/>
-              </NavLink>
+              </Link>
             </Col>
           </Row>
           <Row>

@@ -4,17 +4,23 @@ import { Row } from 'reactstrap';
 import AddRecord from './AddRecord'
 
 class AddList extends Component {
+
   render () {
-    if(this.props.artists[0]){
-      let searchedAlbums = this.props.artists[0].results.map((album, i) => <AddRecord key={i} albums={album}/>)
-      console.log("SUPERSUPER", this.props.artists[0].results[0])
-      return (
-        <div>
-          <Row>
-            {searchedAlbums}
-          </Row>
-        </div>
-      )
+    if(this.props.artists[this.props.artists.length-1]){
+      console.log('addlist props', this.props.artists[this.props.artists.length-1]);
+      let {results} = this.props.artists[this.props.artists.length-1]
+      if(results){
+        let searchedAlbums = results.map((album, i) => <AddRecord key={i} albums={album}/>)
+        return (
+          <div>
+            <Row>
+              {searchedAlbums}
+            </Row>
+          </div>
+        )
+      } else {
+        return null
+      }
     } else {
       return null
     }

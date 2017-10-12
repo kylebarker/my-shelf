@@ -9,8 +9,8 @@ class MyRecordMain extends Component {
   render () {
     return (
       <Container>
-        <RecordToolbar />
-        <MyRecordBody />
+        <RecordToolbar id={this.props.match.params.id}/>
+        <MyRecordBody id={this.props.match.params.id}/>
       </Container>
     )
   }

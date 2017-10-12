@@ -7,11 +7,8 @@ import { addToMyShelf } from '../../actions/artists'
 class AddRecord extends Component {
   render () {
     console.log("Add Record Props",this.props.albums)
-    // let genre = this.props.albums.genre[0];
-    // let albumid = this.props.albums.id.toString();
-    // let label = this.props.albums.label[0];
+  
     let albumArt = this.props.albums.thumb;
-    // let year = this.props.albums.year;
     let title = this.props.albums.title;
     let artistAlbumArray = title.split(" - ");
     let artistName = artistAlbumArray[0];

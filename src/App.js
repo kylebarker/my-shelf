@@ -10,18 +10,20 @@ import NavBar from './components/NavBar'
 import AddMain from './components/Add-Record/AddMain'
 import MyShelfMain from './components/My-Shelf/MyShelfMain'
 import MyRecordMain from './components/My-Record/MyRecordMain'
+import OptimizeMain from './components/Optimize-Record/OptimizeMain'
 
 export class App extends Component {
   render() {
     return (
       <div className="App">
-        <NavBar />
-
         <Router>
           <div>
+            <NavBar />
+
             <Route exact path="/" component={MyShelfMain}/>
-            <Route path="/addRecord" component={AddMain}/>
-            {/* <Route path="/:id" component={MyRecordMain}/> */}
+            <Route exact path="/addRecord" component={AddMain}/>
+            <Route exact path="/album/:id" component={MyRecordMain}/>
+            <Route exact path="/album/:id/edit" component={OptimizeMain}/>
           </div>
         </Router>
       </div>

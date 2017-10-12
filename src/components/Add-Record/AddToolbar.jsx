@@ -17,21 +17,22 @@ class AddToolbar extends Component {
   render () {
     return (
       <Row>
+        <Col>
         <form onSubmit={ this.props.handleSubmit(this.findArtist) }>
           <FormGroup>
-            <Col>
               <div>
                 <Field
                   name="artist"
                   component="input"
                   type="text"
-                  placeholder="Search by Artist"
+                  placeholder="Search by Artist or Album"
+                  className="stretch"
                 />
               <button type="submit" className="searchSubmit">Submit</button>
               </div>
-            </Col>
           </FormGroup>
         </form>
+      </Col>
       </Row>
     )
   }
