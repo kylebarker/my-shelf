@@ -59,13 +59,9 @@ class MyRecordBody extends Component {
               <br/>
               <br/>
               <h5>Genre: {genre}</h5>
-              <br/>
               <h5>Label: {label}</h5>
-              <br/>
               {cat_num}
-              <br/>
               {print_year}
-              <br/>
               {color}
             </Col>
           </Row>

@@ -10,8 +10,8 @@ class OptimizeForm extends Component {
     this.props.getAlbum(this.props.id);
   }
 
-  editAlbum = (id) => {
-    this.props.editAlbum(this.props.id);
+  editAlbum = (values) => {
+    this.props.editAlbum(this.props.id, values);
   }
 
   render () {

@@ -28,9 +28,7 @@ class NavBar extends Component {
     } else {
       return null
     }
-    console.log("MY IDS!!!", ids)
     let randomID = ids[Math.floor(Math.random()*ids.length)]
-    console.log("MY RANDOM ID!!!", randomID)
     let randomLink = "/album/" + randomID
     return (
       <div>
@@ -48,9 +46,6 @@ class NavBar extends Component {
               </NavItem>
             </Nav>
         </Navbar>
-
-
-
       </div>
     )
   }
