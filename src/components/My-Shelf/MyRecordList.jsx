@@ -12,16 +12,23 @@ class MyRecordList extends Component {
   }
 
   render () {
-    console.log("MY RECORD LIST PROPS", this.props)
-    if(this.props.artists[0]){
-      let myAlbums = this.props.artists[0].map((album, i) => <RecordFromList key={i} album={album}/>)
-      return(
-        <div>
-          <Row>
-            {myAlbums}
-          </Row>
-        </div>
-      )
+    console.log("PLEASE LOG THIS", this.props.artists)
+    if(this.props.artists[this.props.artists.length-1]){
+      let results = this.props.artists[0];
+      if(results){
+        console.log("RESULTS", results)
+        let myAlbums = results.map((album, i) => <RecordFromList key={i} album={album}/>)
+        return(
+          <div>
+            <Row>
+              {myAlbums}
+            </Row>
+          </div>
+        )
+
+      }else{
+        return null
+      }
     } else {
       return null
     }
@@ -31,7 +38,6 @@ class MyRecordList extends Component {
 function mapStateToProps(state, props) {
   return {
     artists: state.artists,
-    sortAlbumsBy: state.sortAlbumsBy
   }
 }
 

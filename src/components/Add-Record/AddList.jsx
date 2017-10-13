@@ -6,9 +6,9 @@ import AddRecord from './AddRecord'
 class AddList extends Component {
 
   render () {
-    if(this.props.artists[0]){
-      let results = this.props.artists
-      console.log('results', results)
+    console.log('search', this.props)
+    if(this.props.search[0]){
+      let results = this.props.search
       if(results){
         let searchedAlbums = results.map((album, i) => <AddRecord key={i} albums={album}/>)
         return (
@@ -29,7 +29,8 @@ class AddList extends Component {
 
 function mapStateToProps(state, props) {
   return {
-    artists: state.artists
+    artists: state.artists,
+    search: state.search
   }
 }
 

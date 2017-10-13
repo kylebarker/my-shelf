@@ -1,18 +1,5 @@
 import axios from 'axios';
-const key = "kTczaQNQsMCMiYrKZJRh"
-const secret = "FULBqaLExejZoAZxyCLwCVTBSIzVIWLt"
 
-export const getArtist = (artist) => {
-  console.log('artist in actions', artist.artist);
-  return {
-    type: 'GET_ARTIST',
-    payload: axios({
-      method: "GET",
-      url: `https://api.discogs.com/database/search?q=${artist.artist}&type=master&format=album`,
-      headers: {"Authorization": `Discogs key=${key}, secret=${secret}`}
-     })
-  }
-}
 export const getMyAlbums = () => {
   return {
     type: 'GET_MY_ALBUMS',
@@ -41,9 +28,9 @@ export const removeAlbum = (id) => {
   }
 }
 
-export const editAlbum = (id) => {
+export const editAlbum = (id, data) => {
   return {
     type: 'EDIT_ALBUM',
-    payload: axios.patch(`http://localhost:8000/myShelf/${id}/edit`)
+    payload: axios.patch(`http://localhost:8000/myShelf/${id}/edit`, data)
   }
 }

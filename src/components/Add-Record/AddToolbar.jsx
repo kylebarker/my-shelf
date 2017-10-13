@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { getArtist } from '../../actions/artists'
+import { getArtist } from '../../actions/search'
 import { Row, Col, FormGroup } from 'reactstrap';
 import { Field, reduxForm } from 'redux-form'
 
@@ -44,8 +44,10 @@ AddToolbar = reduxForm({
 })(AddToolbar)
 
 function mapStateToProps(state, props) {
+  console.log("LABEL",state)
   return {
-    artists: state.artists
+    artists: state.artists,
+    search: state.search
   }
 }
 

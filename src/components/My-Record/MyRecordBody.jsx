@@ -68,11 +68,6 @@ class MyRecordBody extends Component {
               <br/>
               {color}
             </Col>
-            <Col>
-              <br/>
-              <button>Get Track List</button>
-            </Col>
-
           </Row>
         </div>
       )
